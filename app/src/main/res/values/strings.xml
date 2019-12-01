@@ -3,4 +3,6 @@
     <string name="nameLabel">Введите имя:</string>
     <string name="emailLabel">Введите Email:</string>
     <string name="buttonLabel">Подписаться</string>
+    <string name="clearLabel">Очистить</string>
+    <string name="responseText">Подписка на рассылку успешно оформлена для пользователя %1$s на email: %2$s</string>
 </resources>

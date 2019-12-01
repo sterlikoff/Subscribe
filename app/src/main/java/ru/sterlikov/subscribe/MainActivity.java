@@ -16,25 +16,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final EditText nameEdit = findViewById(R.id.nameEditText);
+        final EditText emailEdit = findViewById(R.id.emailEditText);
+        final TextView resultView = findViewById(R.id.resultView);
+
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                EditText nameEdit = findViewById(R.id.nameEditText);
-                EditText emailEdit = findViewById(R.id.emailEditText);
-                TextView resultView = findViewById(R.id.resultView);
-
                 String name = nameEdit.getText().toString();
                 String email = emailEdit.getText().toString();
 
-                String result = "Подписка на рассылку успешно оформлена для пользователя " + name + "на email: " + email;
+                String result = getString(R.string.responseText, name, email);
 
                 resultView.setText(result);
 
             }
 
+        });
+
+        Button clearButton = findViewById(R.id.clearButton);
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                nameEdit.setText("");
+                emailEdit.setText("");
+                resultView.setText("");
+
+            }
         });
 
     }
